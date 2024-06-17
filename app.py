@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Fetch environment variables from AWS Parameter Store
-ssm = boto3.client('ssm', region_name='your-region')  # specify your AWS region
+ssm = boto3.client('ssm', region_name='ap-south-1')  # specify your AWS region
 openai_api_key = ssm.get_parameter(Name='OPENAI_API_KEY', WithDecryption=True)['Parameter']['Value']
 secret_key = ssm.get_parameter(Name='SECRET_KEY', WithDecryption=True)['Parameter']['Value']
 
